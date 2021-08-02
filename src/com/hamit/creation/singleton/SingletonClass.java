@@ -1,6 +1,7 @@
 package com.hamit.creation.singleton;
 
-public class SingletonDesign {
+public class SingletonClass {
+
 	// private
 	// private static
 	// public static
@@ -19,20 +20,29 @@ public class SingletonDesign {
 
 	// private , static
 
-	// 1- constructor ==> private
-	private SingletonDesign() {
+	// 1-)parametresiz constructor : yapıcı methodlar private
+	private SingletonClass() {
+		// TODO Auto-generated constructor stub
 	}
 
-	// 2- instance
-	private static SingletonDesign instance;
+	// 2-)private static
+	private static SingletonClass instance;
 
-	// 3- getInstance()
-	public static SingletonDesign getInstance() {
+	// 3-)public static
+	public static SingletonClass getInstance() {
+
 		if (instance == null) {
-			synchronized (SingletonDesign.class) {
-				instance = new SingletonDesign();
+			synchronized (SingletonClass.class) {
+				instance = new SingletonClass();
 			}
 		}
 		return instance;
 	}
+
+	public static void main(String[] args) {
+		SingletonClass singletonClass = new SingletonClass();
+		System.out.println(singletonClass);
+
+	}
+
 }
